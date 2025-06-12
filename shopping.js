@@ -3,22 +3,22 @@ const addButton = document.getElementById(`addButton`);
 const itemButton = document.getElementById(`itemButton`);
 const shoppingList = document.getElementById(`shoppingList`);
 
-//Add items to the list 
+//Create Elements and Add items to the list 
 addButton.addEventListener("click", () => {
-      const text = itemInput.value.trim();
-  if (text) {
-    const li = document.createElement("li");
+      const userText = itemInput.value.trim(); //get the items and remove extra space
+  if (userText) {
+    const li = document.createElement("li"); //create list
 
-    const span = document.createElement("span");
-    span.textContent = text;
+    const span = document.createElement("span"); //display the text
+    span.textContent = userText;
 
-    const editBtn = document.createElement("button");
+    const editBtn = document.createElement("button"); //Adds Edit Button
     editBtn.textContent = "Edit";
 
-    const removeBtn = document.createElement("button");
+    const removeBtn = document.createElement("button"); //Adds remove button
     removeBtn.textContent = "Remove";
 
-    // Edit button logic
+    // Edit button logic to save
     editBtn.addEventListener("click", () => {
       if (editBtn.textContent === "Edit") {
         const input = document.createElement("input");
@@ -32,11 +32,11 @@ addButton.addEventListener("click", () => {
       }
     });
 
-    // Remove button logic
+    // Remove button added
     removeBtn.addEventListener("click", () => {
       li.remove();
     });
-
+    //Add them to the page
     li.appendChild(span);
     li.appendChild(editBtn);
     li.appendChild(removeBtn);
