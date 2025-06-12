@@ -35,6 +35,7 @@ addButton.addEventListener("click", () => {
     // Remove button added
     removeBtn.addEventListener("click", () => {
       li.remove();
+      alert("Item removed from the list.");          
     });
     //Add them to the page
     li.appendChild(span);
